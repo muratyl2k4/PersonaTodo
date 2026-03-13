@@ -79,7 +79,7 @@ const TodoItem = ({ todo, onDelete, onToggle, onUpdate }) => {
                     daysLeft <= 2 ? 'bg-orange-500/10 text-orange-400 border border-orange-500/20' : 
                     'bg-primary-500/10 text-primary-400 border border-primary-500/20'
                   }`}>
-                    {daysLeft < 0 ? 'Exp' : daysLeft === 0 ? 'Today' : `${daysLeft}d`}
+                    {daysLeft < 0 ? 'Gecikti' : daysLeft === 0 ? 'Bugün' : `${daysLeft}g`}
                   </span>
                 )}
                 {isExpanded ? <ChevronUp size={16} className="text-slate-500" /> : <ChevronDown size={16} className="text-slate-500" />}
@@ -96,21 +96,21 @@ const TodoItem = ({ todo, onDelete, onToggle, onUpdate }) => {
               {todo.description}
             </p>
           ) : (
-            <p className="text-[10px] text-slate-600 italic">No description provided.</p>
+            <p className="text-[10px] text-slate-600 italic">Açıklama belirtilmedi.</p>
           )}
           
           <div className="flex flex-wrap gap-x-4 gap-y-1">
             <span className="text-[9px] text-slate-500 font-medium">
-              Added: {new Date(todo.createdAt).toLocaleString()}
+              Eklendi: {new Date(todo.createdAt).toLocaleString()}
             </span>
             {todo.dueDate && (
               <span className="text-[9px] text-primary-400/80 font-medium">
-                Due: {new Date(todo.dueDate).toLocaleDateString()}
+                Bitiş: {new Date(todo.dueDate).toLocaleDateString()}
               </span>
             )}
             {todo.completed && todo.completedAt && (
               <span className="text-[9px] text-green-500/70 font-bold">
-                Done: {new Date(todo.completedAt).toLocaleString()}
+                Tamamlandı: {new Date(todo.completedAt).toLocaleString()}
               </span>
             )}
           </div>

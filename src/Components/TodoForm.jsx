@@ -18,30 +18,30 @@ const TodoForm = ({ onAdd, onClose }) => {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-1.5">
-        <label className="text-sm font-semibold text-slate-300">Task Title</label>
+        <label className="text-sm font-semibold text-slate-300">Görev Başlığı</label>
         <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="What needs to be done?"
+          placeholder="Ne yapılması gerekiyor?"
           autoFocus
           className="w-full bg-slate-800/50 border border-slate-700 text-slate-100 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all placeholder:text-slate-500"
         />
       </div>
 
       <div className="space-y-1.5">
-        <label className="text-sm font-semibold text-slate-300">Description</label>
+        <label className="text-sm font-semibold text-slate-300">Açıklama</label>
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          placeholder="Add some details..."
+          placeholder="Detay ekleyin..."
           rows={3}
           className="w-full bg-slate-800/50 border border-slate-700 text-slate-100 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all placeholder:text-slate-500 resize-none"
         />
       </div>
       
       <div className="space-y-1.5 flex flex-col">
-        <label className="text-sm font-semibold text-slate-300">Deadline</label>
+        <label className="text-sm font-semibold text-slate-300">Bitiş Tarihi (Deadline)</label>
         <input
           type="date"
           value={dueDate}
@@ -56,13 +56,13 @@ const TodoForm = ({ onAdd, onClose }) => {
           onClick={onClose}
           className="flex-1 px-4 py-3 bg-slate-700 hover:bg-slate-600 text-slate-200 font-semibold rounded-xl transition-all"
         >
-          Cancel
+          İptal
         </button>
         <button
           type="submit"
           className="flex-1 px-4 py-3 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all shadow-lg shadow-primary-500/20"
         >
-          Create Task
+          Görev Oluştur
         </button>
       </div>
     </form>
